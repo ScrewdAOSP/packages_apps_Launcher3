@@ -67,22 +67,17 @@ public class SettingsActivity extends Activity {
 
             // Setup allow rotation preference
             Preference rotationPref = findPreference(Utilities.ALLOW_ROTATION_PREFERENCE_KEY);
-            if (getResources().getBoolean(R.bool.allow_rotation)) {
-                // Launcher supports rotation by default. No need to show this setting.
-                getPreferenceScreen().removePreference(rotationPref);
-            } else {
-                mRotationLockObserver = new SystemDisplayRotationLockObserver(rotationPref, resolver);
+           mRotationLockObserver = new SystemDisplayRotationLockObserver(rotationPref, resolver);
 
-                // Register a content observer to listen for system setting changes while
-                // this UI is active.
-                resolver.registerContentObserver(
-                        Settings.System.getUriFor(System.ACCELEROMETER_ROTATION),
-                        false, mRotationLockObserver);
+           // Register a content observer to listen for system setting changes while
+           // this UI is active.
+           resolver.registerContentObserver(
+                   Settings.System.getUriFor(System.ACCELEROMETER_ROTATION),
+                   false, mRotationLockObserver);
 
-                // Initialize the UI once
-                mRotationLockObserver.onChange(true);
-                rotationPref.setDefaultValue(Utilities.getAllowRotationDefaultValue(getActivity()));
-            }
+           // Initialize the UI once
+           mRotationLockObserver.onChange(true);
+           rotationPref.setDefaultValue(Utilities.getAllowRotationDefaultValue(getActivity()));
 
             Preference iconBadgingPref = findPreference(ICON_BADGING_PREFERENCE_KEY);
             if (!BuildCompat.isAtLeastO()) {

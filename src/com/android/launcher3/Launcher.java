@@ -1155,16 +1155,6 @@ public class Launcher extends BaseActivity
         }
     }
 
-    protected boolean hasSettings() {
-        if (mLauncherCallbacks != null) {
-            return mLauncherCallbacks.hasSettings();
-        } else {
-            // On O and above we there is always some setting present settings (add icon to
-            // home screen or icon badging). On earlier APIs we will have the allow rotation
-            // setting, on devices with a locked orientation,
-            return Utilities.isAtLeastO() || !getResources().getBoolean(R.bool.allow_rotation);
-        }
-    }
 
     public void addToCustomContentPage(View customContent,
             CustomContentCallbacks callbacks, String description) {
@@ -1379,18 +1369,13 @@ public class Launcher extends BaseActivity
 
         // Bind settings actions
         View settingsButton = findViewById(R.id.settings_button);
-        boolean hasSettings = hasSettings();
-        if (hasSettings) {
-            new OverviewButtonClickListener(ControlType.SETTINGS_BUTTON) {
-                @Override
-                public void handleViewClick(View view) {
-                    onClickSettingsButton(view);
-                }
-            }.attachTo(settingsButton);
-            settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
-        } else {
-            settingsButton.setVisibility(View.GONE);
-        }
+        new OverviewButtonClickListener(ControlType.SETTINGS_BUTTON) {
+            @Override
+            public void handleViewClick(View view) {
+                onClickSettingsButton(view);
+            }
+        }.attachTo(settingsButton);
+        settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
         mOverviewPanel.setAlpha(0f);
     }
