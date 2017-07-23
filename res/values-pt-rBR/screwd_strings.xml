@@ -18,5 +18,5 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="search_bar_title">Keresési sáv megjelenítése</string>
+  <string name="search_bar_title">Mostrar barra de pesquisa</string>
 </resources>
