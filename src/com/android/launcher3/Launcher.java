@@ -4151,7 +4151,7 @@ public class Launcher extends BaseActivity
                 finish();
             }
             if (Utilities.ICON_PACK_PREFERENCE_KEY.equals(key) || Utilities.ADAPTIVE_ICONS_PREFERENCE_KEY.equals(key)
-                    || Utilities.LEGACY_ICON_PREFERENCE_KEY.equals(key)) {
+                    || Utilities.LEGACY_ICON_PREFERENCE_KEY.equals(key) || Utilities.ICON_SHAPE_PREFERENCE_KEY.equals(key)) {
                 mModel.clearIconCache();
                 mModel.forceReload();
                 mOnResumeNeedsLoad = true;
