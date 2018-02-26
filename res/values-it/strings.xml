@@ -207,4 +207,7 @@
 
     <string name="icon_shape_rounded_square">Quadrato arrotondato</string>
 
+    <string name="other_category_title">Altro</string>
+    <string name="other_category_summary">Opzioni aggiuntive</string>
+
 </resources>
