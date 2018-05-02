@@ -19,4 +19,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Icon pack -->
+  <string name="default_iconpack_title">По умолчанию</string>
+  <string name="icons_pack_name">Набор значков</string>
+  <string name="edit_drop_target_label">Редактировать</string>
+  <string name="edit_app">Редактировать</string>
+  <string name="reset_icon">Восстановить</string>
+  <string name="customize">Настроить</string>
+  <string name="visual">Визуал</string>
+  <string name="all_icons">Все Иконки</string>
+  <string name="similar_icons">Похожие иконки</string>
+  <string name="ok">Oк</string>
+  <string name="icon_label">Описание</string>
+  <string name="loading">Загрузка, пожалуйста подождите</string>
+  <string name="icon_chooser">Выбор Иконок</string>
+  <string name="icon_search">Найти иконку</string>
 </resources>
